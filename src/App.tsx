@@ -240,9 +240,10 @@ export default function App() {
           {DATA.map((item, idx) => (
             <motion.a
               key={item.id}
-              href={item.url}
+              href={item.disabled ? undefined : item.url}
               target={item.disabled ? undefined : "_blank"}
               rel="noopener noreferrer"
+              onClick={item.disabled ? (e: React.MouseEvent) => e.preventDefault() : undefined}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 + idx * 0.1 }}
