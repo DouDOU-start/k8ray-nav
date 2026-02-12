@@ -1,0 +1,13 @@
+services:
+  k8ray-nav:
+    image: ghcr.io/doudou-start/k8ray-nav:latest
+    container_name: k8ray-nav
+    ports:
+      - "${PORT:-80}:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
