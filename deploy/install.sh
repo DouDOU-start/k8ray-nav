@@ -136,7 +136,7 @@ mkdir -p "$INSTALL_DIR"
 cd "$INSTALL_DIR"
 
 # GitHub Raw 文件基础 URL（公开仓库，无需 token）
-REPO_BASE_URL="https://raw.githubusercontent.com/DouDOU-start/k8ray-nav/main"
+REPO_BASE_URL="https://raw.githubusercontent.com/DouDOU-start/k8ray-nav/master"
 
 # 下载配置文件
 info "📥 下载配置文件..."
