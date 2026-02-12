@@ -36,7 +36,7 @@ usage() {
   cat <<EOF
 K8RAY Nav - 服务管理工具
 
-用法: nav <命令>
+用法: k8-nav <命令>
 
 命令:
   start         启动服务
@@ -48,9 +48,9 @@ K8RAY Nav - 服务管理工具
   help          显示帮助信息
 
 示例:
-  nav start
-  nav logs
-  nav update
+  k8-nav start
+  k8-nav logs
+  k8-nav update
 EOF
 }
 

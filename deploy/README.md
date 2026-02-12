@@ -19,11 +19,11 @@ curl -fsSL https://raw.githubusercontent.com/DouDOU-start/k8ray-nav/master/deplo
 ## 服务管理
 
 ```bash
-nav status    # 查看状态
-nav logs      # 查看日志
-nav restart   # 重启
-nav update    # 更新到最新版本
-nav help      # 查看所有命令
+k8-nav status    # 查看状态
+k8-nav logs      # 查看日志
+k8-nav restart   # 重启
+k8-nav update    # 更新到最新版本
+k8-nav help      # 查看所有命令
 ```
 
 ## 配置说明
@@ -38,7 +38,7 @@ nav help      # 查看所有命令
 
 ### 容器无法启动
 ```bash
-nav logs
+k8-nav logs
 ```
 
 ### 端口被占用
@@ -48,25 +48,25 @@ sudo lsof -i :80
 
 # 修改端口后重启
 echo "PORT=8080" > /opt/k8ray-nav/.env
-nav restart
+k8-nav restart
 ```
 
 ## 更新服务
 
 ```bash
-nav update
+k8-nav update
 ```
 
 或手动：
 ```bash
 docker pull ghcr.io/doudou-start/k8ray-nav:latest
-nav restart
+k8-nav restart
 ```
 
 ## 卸载
 
 ```bash
-nav stop
-sudo rm /usr/local/bin/nav
+k8-nav stop
+sudo rm /usr/local/bin/k8-nav
 sudo rm -rf /opt/k8ray-nav
 ```

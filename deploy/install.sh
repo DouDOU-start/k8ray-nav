@@ -146,12 +146,12 @@ if ! curl -fsSL "${REPO_BASE_URL}/deploy/docker-compose.yml" -o docker-compose.y
   exit 1
 fi
 
-if ! curl -fsSL "${REPO_BASE_URL}/deploy/nav.sh" -o nav.sh; then
-  err "下载 nav.sh 失败"
+if ! curl -fsSL "${REPO_BASE_URL}/deploy/k8-nav.sh" -o k8-nav.sh; then
+  err "下载 k8-nav.sh 失败"
   exit 1
 fi
 
-chmod +x nav.sh
+chmod +x k8-nav.sh
 
 info "✓ 配置文件下载完成"
 
@@ -179,13 +179,13 @@ info "⏳ 等待服务启动..."
 sleep 3
 
 # 安装管理命令
-if [[ -f "nav.sh" ]]; then
+if [[ -f "k8-nav.sh" ]]; then
   info "📦 安装管理命令..."
-  cp nav.sh /usr/local/bin/nav
-  chmod +x /usr/local/bin/nav
-  info "✓ 已安装管理命令: nav"
+  cp k8-nav.sh /usr/local/bin/k8-nav
+  chmod +x /usr/local/bin/k8-nav
+  info "✓ 已安装管理命令: k8-nav"
 else
-  warn "未找到 nav.sh，跳过管理命令安装"
+  warn "未找到 k8-nav.sh，跳过管理命令安装"
 fi
 
 # 检查服务状态
@@ -199,11 +199,11 @@ if docker ps --format '{{.Names}}' | grep -q '^k8ray-nav$'; then
   info "🌐 访问地址: http://<服务器IP>:${PORT}"
   echo ""
   info "常用命令:"
-  info "  nav status   # 查看服务状态"
-  info "  nav logs     # 查看实时日志"
-  info "  nav restart  # 重启服务"
-  info "  nav update   # 更新到最新版本"
-  info "  nav help     # 查看所有命令"
+  info "  k8-nav status   # 查看服务状态"
+  info "  k8-nav logs     # 查看实时日志"
+  info "  k8-nav restart  # 重启服务"
+  info "  k8-nav update   # 更新到最新版本"
+  info "  k8-nav help     # 查看所有命令"
   echo ""
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 else
