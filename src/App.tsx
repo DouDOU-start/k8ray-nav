@@ -134,9 +134,10 @@ const DATA = [
   {
     id: 'register',
     title: 'ChatGPT 注册机',
-    desc: '自动化多线程账号注册系统',
+    desc: '自动化多线程账号注册系统，支持私有化部署',
     icon: <Bot className="size-6 text-cyan-400" />,
     url: 'https://cgr.k8ray.com/',
+    repo: 'https://github.com/DouDOU-start/chatgpt-register-deploy',
     color: 'from-cyan-500/20 to-blue-500/20',
     borderColor: 'border-cyan-500/30'
   },
@@ -269,8 +270,22 @@ export default function App() {
 
                 <div className="flex items-center justify-between text-xs font-bold tracking-widest text-slate-400 group-hover:text-white transition-colors mt-auto">
                   <span>{item.disabled ? '正在部署中...' : '立即开启门户'}</span>
-                  <div className="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-                    {item.disabled ? <div className="size-1 bg-slate-500 rounded-full" /> : <ChevronRight className="size-4" />}
+                  <div className="flex items-center gap-2">
+                    {item.repo && (
+                      <a
+                        href={item.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="size-8 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all"
+                        title="GitHub 私有化部署"
+                      >
+                        <Github className="size-4" />
+                      </a>
+                    )}
+                    <div className="size-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+                      {item.disabled ? <div className="size-1 bg-slate-500 rounded-full" /> : <ChevronRight className="size-4" />}
+                    </div>
                   </div>
                 </div>
               </div>
