@@ -215,6 +215,14 @@ export default function App() {
           animate={{ opacity: 1, x: 0 }}
           className="flex gap-4 sm:gap-8 items-center"
         >
+          <span className="text-slate-400 flex items-center gap-1.5 text-xs">
+            <MessageCircle className="size-4" />
+            <span className="hidden sm:inline">AICHI_enjun</span>
+          </span>
+          <a href="mailto:1021217094@qq.com" className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5 text-xs">
+            <Mail className="size-4" />
+            <span className="hidden sm:inline">1021217094@qq.com</span>
+          </a>
           <a href="https://github.com/DouDOU-start" target="_blank" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2">
             <Github className="size-5 sm:size-6" />
             <span className="hidden sm:inline text-xs font-bold tracking-widest uppercase">GitHub</span>
@@ -298,20 +306,6 @@ export default function App() {
           ))}
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="relative z-10 pb-8 pt-4 text-center">
-        <div className="flex items-center justify-center gap-6 text-slate-500 text-xs tracking-wide">
-          <span className="flex items-center gap-1.5">
-            <MessageCircle className="size-3.5" />
-            微信: AICHI_enjun
-          </span>
-          <a href="mailto:1021217094@qq.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
-            <Mail className="size-3.5" />
-            1021217094@qq.com
-          </a>
-        </div>
-      </footer>
 
       {/* Background Ambience Layers */}
       <div className="fixed inset-0 pointer-events-none z-[1]">
