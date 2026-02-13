@@ -6,7 +6,9 @@ import {
   Bot,
   Cpu,
   ChevronRight,
-  Github
+  Github,
+  Mail,
+  MessageCircle
 } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -297,6 +299,19 @@ export default function App() {
         </div>
       </main>
 
+      {/* Footer */}
+      <footer className="relative z-10 pb-8 pt-4 text-center">
+        <div className="flex items-center justify-center gap-6 text-slate-500 text-xs tracking-wide">
+          <span className="flex items-center gap-1.5">
+            <MessageCircle className="size-3.5" />
+            微信: AICHI_enjun
+          </span>
+          <a href="mailto:1021217094@qq.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
+            <Mail className="size-3.5" />
+            1021217094@qq.com
+          </a>
+        </div>
+      </footer>
 
       {/* Background Ambience Layers */}
       <div className="fixed inset-0 pointer-events-none z-[1]">
